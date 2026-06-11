@@ -1,8 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Bundled Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scott Gemmell — Front-End Developer</title>
+  <meta name="description" data-seo content="Scott Gemmell is a front-end developer building accessible, fast interfaces and the design systems behind them across corporate and public-sector Agile teams.">
+  <link rel="canonical" data-seo href="https://scottgemmell.com/">
+  <meta name="author" data-seo content="Scott Gemmell">
+  <!-- Open Graph -->
+  <meta property="og:type" data-seo content="profile">
+  <meta property="og:title" data-seo content="Scott Gemmell — Front-End Developer">
+  <meta property="og:description" data-seo content="Front-end developer building accessible, fast interfaces and the design systems behind them across corporate and public-sector Agile teams.">
+  <meta property="og:url" data-seo content="https://scottgemmell.com/">
+  <meta property="og:image" data-seo content="https://scottgemmell.com/cv-photo.webp">
+  <meta property="profile:first_name" data-seo content="Scott">
+  <meta property="profile:last_name" data-seo content="Gemmell">
+  <!-- Twitter -->
+  <meta name="twitter:card" data-seo content="summary">
+  <meta name="twitter:title" data-seo content="Scott Gemmell — Front-End Developer">
+  <meta name="twitter:description" data-seo content="Front-end developer building accessible, fast interfaces and the design systems behind them across corporate and public-sector Agile teams.">
+  <meta name="twitter:image" data-seo content="https://scottgemmell.com/cv-photo.webp">
+  <!-- Person structured data -->
+  <script type="application/ld+json" data-seo>
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Scott Gemmell",
+    "jobTitle": "Front-End Developer",
+    "url": "https://scottgemmell.com/",
+    "image": "https://scottgemmell.com/cv-photo.webp",
+    "description": "Front-end developer building accessible, fast interfaces and the design systems behind them across corporate and public-sector Agile teams.",
+    "sameAs": ["https://www.linkedin.com/in/scogem/"]
+  }
+  </script>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #faf9f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
@@ -127,6 +157,14 @@ document.addEventListener('DOMContentLoaded', async function() {
     // createElement so they execute, awaiting onload for src scripts to
     // preserve ordering (React before ReactDOM before Babel before text/babel).
     const doc = new DOMParser().parseFromString(template, 'text/html');
+    // Carry static SEO head tags into the rendered document so they survive
+    // the documentElement swap for JS-rendering crawlers (Googlebot et al.).
+    const renderedHead = doc.head || doc.querySelector('head');
+    if (renderedHead) {
+      for (const el of document.querySelectorAll('head [data-seo]')) {
+        renderedHead.appendChild(el.cloneNode(true));
+      }
+    }
     document.documentElement.replaceWith(doc.documentElement);
     const dead = Array.from(document.scripts);
     for (const old of dead) {
