@@ -267,7 +267,7 @@
       this._subFn = () => this._render();
       // Shadow-DOM listeners live with the shadow DOM — bound once here so
       // disconnect/reconnect (e.g. React remount) doesn't stack handlers.
-      this._empty.addEventListener('click', () => this._input.click());
+      this._empty.addEventListener('click', () => { if (this._editable()) this._input.click(); });
       root.addEventListener('click', (e) => {
         const act = e.target && e.target.getAttribute && e.target.getAttribute('data-act');
         if (act === 'replace') { this._exitReframe(true); this._input.click(); }
@@ -442,9 +442,18 @@
 
     attributeChangedCallback() { if (this.shadowRoot) this._render(); }
 
+    // True only inside the omelette runtime (where writeFile exists). Drops,
+    // browse-clicks, and reframing are all gated on this so a published share
+    // link is strictly read-only — visitors can't swap the author's image.
+    _editable() {
+      return !!(window.omelette && window.omelette.writeFile);
+    }
+
     // handleEvent — one listener object for all four drag events keeps the
     // add/remove symmetric and the depth counter correct.
     handleEvent(e) {
+      // Read-only outside the editor: ignore drags so no drop ever lands.
+      if (!this._editable()) return;
       if (e.type === 'dragenter' || e.type === 'dragover') {
         // Without preventDefault the browser never fires 'drop'.
         e.preventDefault();
@@ -593,7 +602,7 @@
       this._ring.style.display = mask ? 'none' : '';
 
       // Controls and reframe entry gate on this so share links stay read-only.
-      const editable = !!(window.omelette && window.omelette.writeFile);
+      const editable = this._editable();
       this.toggleAttribute('data-editable', editable);
       this._sub.style.display = editable ? '' : 'none';
 
