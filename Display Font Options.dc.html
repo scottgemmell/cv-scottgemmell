@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Schibsted+Grotesk:wght@400;500;600;700&family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; -webkit-font-smoothing: antialiased; }
+</style>
+</helmet>
+
+<div data-screen-label="Display Font Options" style="--ink:oklch(0.24 0.02 256); --ink-soft:oklch(0.40 0.02 256); --muted:oklch(0.54 0.02 256); --faint:oklch(0.74 0.015 256); --line:oklch(0.91 0.008 256); --surface:oklch(0.97 0.006 256); --paper:oklch(0.992 0.003 256); --accent:oklch(0.55 0.18 256); --accent-ink:oklch(0.48 0.17 256); --mono:'Space Mono',ui-monospace,monospace; min-height:100vh; background:oklch(0.95 0.006 256); color:var(--ink); font-family:'Space Grotesk',sans-serif; padding:72px 40px 120px;">
+
+  <div style="max-width:880px; margin:0 auto;">
+
+    <header style="margin-bottom:64px;">
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;"><span style="width:8px; height:8px; border-radius:999px; background:var(--accent);"></span><span style="font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);">Display Face — 5 options</span></div>
+      <h1 style="font-size:40px; font-weight:500; letter-spacing:-0.02em; line-height:1.05; margin:0 0 14px;">Choosing the main display font</h1>
+      <p style="font-size:16px; line-height:1.6; color:var(--muted); margin:0; max-width:560px;">Each card shows the same masthead, section header and ledger row. Only the display/body sans changes — Space Mono and the palette stay fixed. Tell me which number to lock in.</p>
+    </header>
+
+    <!-- ============ OPTION 01 ============ -->
+    <div style="margin-bottom:48px;">
+      <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:16px;">
+        <span style="font-family:var(--mono); font-size:12px; font-weight:700; color:var(--accent);">01</span>
+        <span style="font-size:16px; font-weight:600;">Space Grotesk</span>
+        <span style="font-size:13px; color:var(--muted);">— current · geometric, technical, a little quirky</span>
+      </div>
+      <div style="background:#fff; border:1px solid var(--line); border-radius:8px; padding:48px; font-family:'Space Grotesk',sans-serif;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;"><span style="width:7px; height:7px; border-radius:999px; background:var(--accent);"></span><span style="font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);">Front-end UI Developer</span></div>
+        <h2 style="font-size:46px; font-weight:500; letter-spacing:-0.02em; line-height:1.0; margin:0 0 14px;">Scott Gemmell</h2>
+        <p style="font-size:17px; line-height:1.5; color:var(--ink-soft); margin:0 0 32px; max-width:480px;">I build accessible, fast interfaces and the design systems behind them.</p>
+        <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:22px;"><span style="font-family:var(--mono); font-size:12px; font-weight:700; color:var(--accent);">01</span><span style="font-size:22px; font-weight:500; letter-spacing:-0.01em;">Experience</span><span style="flex:1; height:1px; background:var(--line);"></span></div>
+        <div style="display:grid; grid-template-columns:110px 1fr; gap:28px;"><div style="text-align:right;"><span style="font-family:var(--mono); font-size:12px; color:var(--ink-soft);">2021 — Now</span></div><div><div style="font-size:18px; font-weight:600;">Senior Front-end Developer</div><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:440px;">Led the component library and design-system tooling for a thirty-person product team.</p></div></div>
+      </div>
+    </div>
+
+    <!-- ============ OPTION 02 ============ -->
+    <div style="margin-bottom:48px;">
+      <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:16px;">
+        <span style="font-family:var(--mono); font-size:12px; font-weight:700; color:var(--accent);">02</span>
+        <span style="font-size:16px; font-weight:600;">Bricolage Grotesque</span>
+        <span style="font-size:13px; color:var(--muted);">— editorial, warm, distinctive headlines</span>
+      </div>
+      <div style="background:#fff; border:1px solid var(--line); border-radius:8px; padding:48px; font-family:'Bricolage Grotesque',sans-serif;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;"><span style="width:7px; height:7px; border-radius:999px; background:var(--accent);"></span><span style="font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);">Front-end UI Developer</span></div>
+        <h2 style="font-size:46px; font-weight:500; letter-spacing:-0.02em; line-height:1.0; margin:0 0 14px;">Scott Gemmell</h2>
+        <p style="font-size:17px; line-height:1.5; color:var(--ink-soft); margin:0 0 32px; max-width:480px;">I build accessible, fast interfaces and the design systems behind them.</p>
+        <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:22px;"><span style="font-family:var(--mono); font-size:12px; font-weight:700; color:var(--accent);">01</span><span style="font-size:22px; font-weight:500; letter-spacing:-0.01em;">Experience</span><span style="flex:1; height:1px; background:var(--line);"></span></div>
+        <div style="display:grid; grid-template-columns:110px 1fr; gap:28px;"><div style="text-align:right;"><span style="font-family:var(--mono); font-size:12px; color:var(--ink-soft);">2021 — Now</span></div><div><div style="font-size:18px; font-weight:600;">Senior Front-end Developer</div><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:440px;">Led the component library and design-system tooling for a thirty-person product team.</p></div></div>
+      </div>
+    </div>
+
+    <!-- ============ OPTION 03 ============ -->
+    <div style="margin-bottom:48px;">
+      <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:16px;">
+        <span style="font-family:var(--mono); font-size:12px; font-weight:700; color:var(--accent);">03</span>
+        <span style="font-size:16px; font-weight:600;">Schibsted Grotesk</span>
+        <span style="font-size:13px; color:var(--muted);">— neutral editorial grotesk, news-grade clarity</span>
+      </div>
+      <div style="background:#fff; border:1px solid var(--line); border-radius:8px; padding:48px; font-family:'Schibsted Grotesk',sans-serif;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;"><span style="width:7px; height:7px; border-radius:999px; background:var(--accent);"></span><span style="font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);">Front-end UI Developer</span></div>
+        <h2 style="font-size:46px; font-weight:500; letter-spacing:-0.02em; line-height:1.0; margin:0 0 14px;">Scott Gemmell</h2>
+        <p style="font-size:17px; line-height:1.5; color:var(--ink-soft); margin:0 0 32px; max-width:480px;">I build accessible, fast interfaces and the design systems behind them.</p>
+        <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:22px;"><span style="font-family:var(--mono); font-size:12px; font-weight:700; color:var(--accent);">01</span><span style="font-size:22px; font-weight:500; letter-spacing:-0.01em;">Experience</span><span style="flex:1; height:1px; background:var(--line);"></span></div>
+        <div style="display:grid; grid-template-columns:110px 1fr; gap:28px;"><div style="text-align:right;"><span style="font-family:var(--mono); font-size:12px; color:var(--ink-soft);">2021 — Now</span></div><div><div style="font-size:18px; font-weight:600;">Senior Front-end Developer</div><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:440px;">Led the component library and design-system tooling for a thirty-person product team.</p></div></div>
+      </div>
+    </div>
+
+    <!-- ============ OPTION 04 ============ -->
+    <div style="margin-bottom:48px;">
+      <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:16px;">
+        <span style="font-family:var(--mono); font-size:12px; font-weight:700; color:var(--accent);">04</span>
+        <span style="font-size:16px; font-weight:600;">Hanken Grotesk</span>
+        <span style="font-size:13px; color:var(--muted);">— friendly, highly readable, understated</span>
+      </div>
+      <div style="background:#fff; border:1px solid var(--line); border-radius:8px; padding:48px; font-family:'Hanken Grotesk',sans-serif;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;"><span style="width:7px; height:7px; border-radius:999px; background:var(--accent);"></span><span style="font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);">Front-end UI Developer</span></div>
+        <h2 style="font-size:46px; font-weight:600; letter-spacing:-0.02em; line-height:1.0; margin:0 0 14px;">Scott Gemmell</h2>
+        <p style="font-size:17px; line-height:1.5; color:var(--ink-soft); margin:0 0 32px; max-width:480px;">I build accessible, fast interfaces and the design systems behind them.</p>
+        <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:22px;"><span style="font-family:var(--mono); font-size:12px; font-weight:700; color:var(--accent);">01</span><span style="font-size:22px; font-weight:600; letter-spacing:-0.01em;">Experience</span><span style="flex:1; height:1px; background:var(--line);"></span></div>
+        <div style="display:grid; grid-template-columns:110px 1fr; gap:28px;"><div style="text-align:right;"><span style="font-family:var(--mono); font-size:12px; color:var(--ink-soft);">2021 — Now</span></div><div><div style="font-size:18px; font-weight:600;">Senior Front-end Developer</div><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:440px;">Led the component library and design-system tooling for a thirty-person product team.</p></div></div>
+      </div>
+    </div>
+
+    <!-- ============ OPTION 05 ============ -->
+    <div style="margin-bottom:8px;">
+      <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:16px;">
+        <span style="font-family:var(--mono); font-size:12px; font-weight:700; color:var(--accent);">05</span>
+        <span style="font-size:16px; font-weight:600;">Instrument Sans</span>
+        <span style="font-size:13px; color:var(--muted);">— crisp, modern, quietly confident</span>
+      </div>
+      <div style="background:#fff; border:1px solid var(--line); border-radius:8px; padding:48px; font-family:'Instrument Sans',sans-serif;">
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;"><span style="width:7px; height:7px; border-radius:999px; background:var(--accent);"></span><span style="font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);">Front-end UI Developer</span></div>
+        <h2 style="font-size:46px; font-weight:600; letter-spacing:-0.02em; line-height:1.0; margin:0 0 14px;">Scott Gemmell</h2>
+        <p style="font-size:17px; line-height:1.5; color:var(--ink-soft); margin:0 0 32px; max-width:480px;">I build accessible, fast interfaces and the design systems behind them.</p>
+        <div style="display:flex; align-items:baseline; gap:14px; margin-bottom:22px;"><span style="font-family:var(--mono); font-size:12px; font-weight:700; color:var(--accent);">01</span><span style="font-size:22px; font-weight:600; letter-spacing:-0.01em;">Experience</span><span style="flex:1; height:1px; background:var(--line);"></span></div>
+        <div style="display:grid; grid-template-columns:110px 1fr; gap:28px;"><div style="text-align:right;"><span style="font-family:var(--mono); font-size:12px; color:var(--ink-soft);">2021 — Now</span></div><div><div style="font-size:18px; font-weight:600;">Senior Front-end Developer</div><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:440px;">Led the component library and design-system tooling for a thirty-person product team.</p></div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
