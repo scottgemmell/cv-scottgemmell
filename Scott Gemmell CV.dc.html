@@ -77,8 +77,8 @@
     if(t&&!t.firstChild){var a=t.getAttribute('data-a'),b=t.getAttribute('data-b');if(a&&b){var lab=document.createElement('span');lab.className='cv-faint-label';lab.textContent='TEL';var ln=document.createElement('a');ln.className='cv-link';ln.href='tel:+44'+a.slice(1)+b;ln.textContent=a+String.fromCharCode(32)+b;t.appendChild(lab);t.appendChild(ln);}}
     return true;
   }
-  function loop(n){if(build()||n<=0)return;setTimeout(function(){loop(n-1);},50);}
-  function go(){loop(60);}
+  function loop(n){build();if(n<=0)return;setTimeout(function(){loop(n-1);},100);}
+  function go(){loop(100);}
   if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
 })();
 </script>

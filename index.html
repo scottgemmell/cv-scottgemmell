@@ -41,7 +41,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<script src="./image-slot.js"></script>
 <script>
 (function(){
   var T = window.__cvThemes = {
@@ -107,8 +106,8 @@
     if(t&&!t.firstChild){var a=t.getAttribute('data-a'),b=t.getAttribute('data-b');if(a&&b){var lab=document.createElement('span');lab.className='cv-faint-label';lab.textContent='TEL';var ln=document.createElement('a');ln.className='cv-link';ln.href='tel:+44'+a.slice(1)+b;ln.textContent=a+String.fromCharCode(32)+b;t.appendChild(lab);t.appendChild(ln);}}
     return true;
   }
-  function loop(n){if(build()||n<=0)return;setTimeout(function(){loop(n-1);},50);}
-  function go(){loop(60);}
+  function loop(n){build();if(n<=0)return;setTimeout(function(){loop(n-1);},100);}
+  function go(){loop(100);}
   if(document.readyState!=='loading')go();else document.addEventListener('DOMContentLoaded',go);
 })();
 </script>
@@ -154,7 +153,7 @@
           <h1 style="font-size:56px; font-weight:600; letter-spacing:-0.02em; line-height:1.0; margin:0 0 16px; text-wrap:balance;">Scott Gemmell</h1>
           <p style="font-size:20px; line-height:1.5; color:var(--ink-soft); margin:0; max-width:520px;">Front-end developer building accessible, fast interfaces, and the pattern libraries behind them, for corporate and public-sector Agile teams.</p>
         </div>
-        <image-slot id="cv-photo" shape="rounded" radius="14" placeholder="Drop a photo" src="./cv-photo.webp" style="width:136px; height:136px; flex:none;"></image-slot>
+        <img src="./cv-photo.webp" alt="Scott Gemmell" width="272" height="272" style="width:136px; height:136px; flex:none; object-fit:cover; border-radius:14px; display:block;">
       </header>
 
       <!-- contact bar -->
