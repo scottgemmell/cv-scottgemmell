@@ -45,8 +45,8 @@
 <script>
 (function(){
   var T = window.__cvThemes = {
-    light: { '--ink':'oklch(0.24 0.02 256)','--ink-soft':'oklch(0.40 0.02 256)','--muted':'oklch(0.50 0.02 256)','--faint':'oklch(0.64 0.015 256)','--line':'oklch(0.90 0.008 256)','--surface':'oklch(0.97 0.006 256)','--paper':'#ffffff','--app-bg':'oklch(0.95 0.006 256)','--accent':'oklch(0.52 0.18 256)','--accent-ink':'oklch(0.47 0.17 256)','--on-accent':'#ffffff','--shadow':'0 1px 2px rgba(20,25,35,0.06), 0 24px 60px rgba(20,25,35,0.10)' },
-    dark: { '--ink':'oklch(0.95 0.008 256)','--ink-soft':'oklch(0.80 0.015 256)','--muted':'oklch(0.68 0.02 256)','--faint':'oklch(0.52 0.02 256)','--line':'oklch(0.34 0.02 256)','--surface':'oklch(0.29 0.02 256)','--paper':'oklch(0.23 0.02 256)','--app-bg':'oklch(0.17 0.015 256)','--accent':'oklch(0.72 0.14 256)','--accent-ink':'oklch(0.80 0.13 256)','--on-accent':'#ffffff','--shadow':'0 1px 2px rgba(0,0,0,0.4), 0 24px 60px rgba(0,0,0,0.55)' },
+    light: { '--ink':'oklch(0.24 0.02 256)','--ink-soft':'oklch(0.40 0.02 256)','--muted':'oklch(0.50 0.02 256)','--faint':'oklch(0.54 0.02 256)','--line':'oklch(0.90 0.008 256)','--surface':'oklch(0.97 0.006 256)','--paper':'#ffffff','--app-bg':'oklch(0.95 0.006 256)','--accent':'oklch(0.52 0.18 256)','--accent-ink':'oklch(0.47 0.17 256)','--on-accent':'#ffffff','--shadow':'0 1px 2px rgba(20,25,35,0.06), 0 24px 60px rgba(20,25,35,0.10)' },
+    dark: { '--ink':'oklch(0.95 0.008 256)','--ink-soft':'oklch(0.80 0.015 256)','--muted':'oklch(0.68 0.02 256)','--faint':'oklch(0.66 0.02 256)','--line':'oklch(0.34 0.02 256)','--surface':'oklch(0.29 0.02 256)','--paper':'oklch(0.23 0.02 256)','--app-bg':'oklch(0.17 0.015 256)','--accent':'oklch(0.72 0.14 256)','--accent-ink':'oklch(0.80 0.13 256)','--on-accent':'#ffffff','--shadow':'0 1px 2px rgba(0,0,0,0.4), 0 24px 60px rgba(0,0,0,0.55)' },
     contrast: { '--ink':'#fff4e0','--ink-soft':'#ffe6c4','--muted':'#f3ddbd','--faint':'#d2ba91','--line':'#6a4f2c','--surface':'#3a2a16','--paper':'#2a1c0e','--app-bg':'#170f06','--accent':'#ff9a4d','--accent-ink':'#ffc28a','--on-accent':'#1f1407','--shadow':'0 1px 2px rgba(0,0,0,0.5), 0 28px 64px rgba(0,0,0,0.6)' }
   };
   var t = 'light';
@@ -58,12 +58,29 @@
 <style>
   * { box-sizing: border-box; }
   body { margin: 0; -webkit-font-smoothing: antialiased; }
-  :root { --ink:oklch(0.24 0.02 256); --ink-soft:oklch(0.40 0.02 256); --muted:oklch(0.50 0.02 256); --faint:oklch(0.64 0.015 256); --line:oklch(0.90 0.008 256); --surface:oklch(0.97 0.006 256); --paper:#ffffff; --app-bg:oklch(0.95 0.006 256); --accent:oklch(0.52 0.18 256); --accent-ink:oklch(0.47 0.17 256); --on-accent:#ffffff; --shadow:0 1px 2px rgba(20,25,35,0.06), 0 24px 60px rgba(20,25,35,0.10); }
+  :root { --ink:oklch(0.24 0.02 256); --ink-soft:oklch(0.40 0.02 256); --muted:oklch(0.50 0.02 256); --faint:oklch(0.54 0.02 256); --line:oklch(0.90 0.008 256); --surface:oklch(0.97 0.006 256); --paper:#ffffff; --app-bg:oklch(0.95 0.006 256); --accent:oklch(0.52 0.18 256); --accent-ink:oklch(0.47 0.17 256); --on-accent:#ffffff; --shadow:0 1px 2px rgba(20,25,35,0.06), 0 24px 60px rgba(20,25,35,0.10); }
   h1, h2, h3 { color: var(--ink); }
   .om-print-only { display: none !important; }
   .cv-faint-label { font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; color:var(--faint); }
   .cv-link { font-size:14px; color:var(--accent-ink); text-decoration:underline; text-underline-offset:3px; }
   .cv-co { font-weight:600; color:var(--ink); }
+  a:focus-visible, button:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+  .cv-skip:focus { top:12px !important; outline:3px solid var(--ink); outline-offset:2px; }
+  h2, h3 { text-wrap: balance; }
+  .om-page p { text-wrap: pretty; }
+  @media (max-width: 640px) {
+    .om-no-print { position: static !important; }
+    .om-no-print > div { padding: 10px 16px !important; gap: 8px 12px !important; }
+    .om-no-print button { padding: 7px 11px !important; font-size: 13px !important; }
+    main { padding: 16px 10px 64px !important; }
+    .om-page { padding: 36px 22px 40px !important; }
+    .om-page h1 { font-size: 40px !important; }
+    .om-entry, .cv-ledger { display: flex !important; flex-direction: column !important; gap: 6px !important; }
+    .om-entry > div:first-child, .cv-ledger > div:first-child {
+      text-align: left !important; display: flex !important; flex-direction: row !important;
+      align-items: baseline !important; gap: 12px !important; flex-wrap: wrap;
+    }
+  }
   @page { size: A4; margin: 14mm; }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
   @media print {
@@ -72,7 +89,7 @@
     .om-print-only { display: flex !important; }
     .om-app {
       background: #fff !important; padding: 0 !important;
-      --ink:#1b2027; --ink-soft:#3a4250; --muted:#4f5862; --faint:#7c848f;
+      --ink:#1b2027; --ink-soft:#3a4250; --muted:#4f5862; --faint:#6b7280;
       --line:#d7dce2; --surface:#f1f4f7; --paper:#ffffff; --app-bg:#ffffff;
       --accent:#1f4fcf; --accent-ink:#1f4fcf;
     }
@@ -99,7 +116,7 @@
 
 <div class="om-app" data-screen-label="Scott Gemmell — CV web app" style="min-height:100vh; background:var(--app-bg); color:var(--ink); font-family:'Hanken Grotesk',-apple-system,sans-serif; transition:background-color .25s ease, color .25s ease;">
 
-  <a href="#cv-main" style="position:absolute; left:12px; top:-60px; z-index:50; background:var(--accent); color:var(--on-accent); font-family:'Space Mono',monospace; font-size:13px; font-weight:700; padding:10px 16px; border-radius:8px; text-decoration:none;" style-focus="position:absolute; left:12px; top:12px; z-index:50; background:var(--accent); color:var(--on-accent); font-family:'Space Mono',monospace; font-size:13px; font-weight:700; padding:10px 16px; border-radius:8px; text-decoration:none; outline:3px solid var(--ink); outline-offset:2px;">Skip to CV</a>
+  <a class="cv-skip" href="#cv-main" style="position:absolute; left:12px; top:-60px; z-index:50; background:var(--accent); color:var(--on-accent); font-family:'Space Mono',monospace; font-size:13px; font-weight:700; padding:10px 16px; border-radius:8px; text-decoration:none;" style-focus="position:absolute; left:12px; top:12px; z-index:50; background:var(--accent); color:var(--on-accent); font-family:'Space Mono',monospace; font-size:13px; font-weight:700; padding:10px 16px; border-radius:8px; text-decoration:none; outline:3px solid var(--ink); outline-offset:2px;">Skip to CV</a>
 
   <!-- ============ TOOLBAR ============ -->
   <header class="om-no-print" role="banner" style="position:sticky; top:0; z-index:40; backdrop-filter:saturate(1.4) blur(10px); background:color-mix(in oklab, var(--app-bg) 78%, transparent); border-bottom:1px solid var(--line);">
@@ -135,7 +152,7 @@
             <span style="font-family:'Space Mono',monospace; font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted);">Front-end UI Developer</span>
           </div>
           <h1 style="font-size:56px; font-weight:600; letter-spacing:-0.02em; line-height:1.0; margin:0 0 16px; text-wrap:balance;">Scott Gemmell</h1>
-          <p style="font-size:20px; line-height:1.5; color:var(--ink-soft); margin:0; max-width:520px;">Front-end developer building accessible, fast interfaces — and the pattern libraries behind them — across corporate and public-sector Agile teams.</p>
+          <p style="font-size:20px; line-height:1.5; color:var(--ink-soft); margin:0; max-width:520px;">Front-end developer building accessible, fast interfaces, and the pattern libraries behind them, for corporate and public-sector Agile teams.</p>
         </div>
         <image-slot id="cv-photo" shape="rounded" radius="14" placeholder="Drop a photo" src="./cv-photo.webp" style="width:136px; height:136px; flex:none;"></image-slot>
       </header>
@@ -155,11 +172,11 @@
           <h2 id="sec-profile" style="font-size:27px; font-weight:600; letter-spacing:-0.01em; margin:0;">Profile</h2>
           <span style="flex:1; height:1px; background:var(--line);"></span>
         </div>
-        <div style="display:grid; grid-template-columns:120px 1fr; gap:32px;">
+        <div class="cv-ledger" style="display:grid; grid-template-columns:120px 1fr; gap:32px;">
           <div style="text-align:right;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">About</span></div>
           <div style="display:flex; flex-direction:column; gap:14px; max-width:600px;">
-            <p style="font-size:16px; line-height:1.65; color:var(--muted); margin:0;">Front-end contract developer with years of experience delivering web applications for banking and financial-services clients — <strong class="cv-co">RBS</strong>, <strong class="cv-co">NatWest</strong>, <strong class="cv-co">Ulster Bank</strong>, <strong class="cv-co">Clydesdale Bank</strong> and pension providers <strong class="cv-co">Aegon</strong> and <strong class="cv-co">Nest</strong>. I build both the interfaces and the design systems behind them: at <strong class="cv-co">Syntel Europe</strong> I created a custom UI pattern library for a major corporate banking platform, and at <strong class="cv-co">Edrington</strong> and <strong class="cv-co">Arnold Clark</strong> I shipped React applications and reusable component libraries used across Agile teams.</p>
-            <p style="font-size:16px; line-height:1.65; color:var(--muted); margin:0;">I build accessible, performant interfaces with React, Redux and modern JavaScript, and I'm at home in the regulated, security-conscious environments fintech demands. Currently contracting with <strong class="cv-co">Sage</strong> and available for new fintech engagements.</p>
+            <p style="font-size:16px; line-height:1.65; color:var(--muted); margin:0;">Front-end contract developer with years of experience delivering web applications for banking and financial-services clients: <strong class="cv-co">RBS</strong>, <strong class="cv-co">NatWest</strong>, <strong class="cv-co">Ulster Bank</strong>, <strong class="cv-co">Clydesdale Bank</strong> and pension providers <strong class="cv-co">Aegon</strong> and <strong class="cv-co">Nest</strong>. I build both the interfaces and the design systems behind them: at <strong class="cv-co">Syntel Europe</strong> I created a custom UI pattern library for a major corporate banking platform, and at <strong class="cv-co">Edrington</strong> and <strong class="cv-co">Arnold Clark</strong> I shipped React applications and reusable component libraries used across Agile teams.</p>
+            <p style="font-size:16px; line-height:1.65; color:var(--muted); margin:0;">I build accessible, performant interfaces with React, Redux and modern JavaScript, and I'm at home in the regulated, security-conscious environments fintech demands. Currently contracting with <strong class="cv-co">Sage</strong> and available for new engagements.</p>
             <div style="display:flex; align-items:baseline; gap:9px; margin-top:2px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; color:var(--faint);">INTERESTS</span><span style="font-size:14px; color:var(--ink-soft);">Football · Gym · Video games</span></div>
           </div>
         </div>
@@ -176,7 +193,7 @@
         <div style="display:flex; flex-direction:column; gap:26px;">
 
           <div class="om-entry" style="display:grid; grid-template-columns:120px 1fr; gap:32px; break-inside:avoid;">
-            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Mar 2025 — Now</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Contract</span></div>
+            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Mar 2025 — Now</span><span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Contract</span></div>
             <div style="display:flex; flex-direction:column; gap:4px;"><h3 style="font-size:18px; font-weight:600; margin:0;">Front-end Engineer</h3><span style="font-size:13px; color:var(--ink-soft);"><strong class="cv-co">Sage</strong> · Remote (US)</span><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:560px;">Collaborated on the rebranding of Anvyl to Sage, delivering front-end web updates that aligned digital experiences with the new brand identity while maintaining a seamless user experience and site performance.</p></div>
           </div>
 
@@ -186,47 +203,47 @@
           </div>
 
           <div class="om-entry" style="display:grid; grid-template-columns:120px 1fr; gap:32px; break-inside:avoid;">
-            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Feb — Jun 2023</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Contract</span></div>
+            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Feb — Jun 2023</span><span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Contract</span></div>
             <div style="display:flex; flex-direction:column; gap:4px;"><h3 style="font-size:18px; font-weight:600; margin:0;">Front-end Developer</h3><span style="font-size:13px; color:var(--ink-soft);"><strong class="cv-co">MRM Global</strong> · Remote</span><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:560px;">Built and maintained web flows for the Brand Creator app (food &amp; drinks) using Polotno Studio with React and Redux Toolkit, alongside product owners, designers and testers.</p></div>
           </div>
 
           <div class="om-entry" style="display:grid; grid-template-columns:120px 1fr; gap:32px; break-inside:avoid;">
-            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Jan — Feb 2023</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Contract</span></div>
+            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Jan — Feb 2023</span><span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Contract</span></div>
             <div style="display:flex; flex-direction:column; gap:4px;"><h3 style="font-size:18px; font-weight:600; margin:0;">Portal Developer</h3><span style="font-size:13px; color:var(--ink-soft);"><strong class="cv-co">Nest / Aegon</strong> · Remote | Edinburgh</span><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:560px;">Hired for a government pensions portal; when the project was descoped on day one, packaged a deliverable for a potential next phase.</p></div>
           </div>
 
           <div class="om-entry" style="display:grid; grid-template-columns:120px 1fr; gap:32px; break-inside:avoid;">
-            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Feb 2021 — Sep 2022</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Contract</span></div>
+            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Feb 2021 — Sep 2022</span><span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Contract</span></div>
             <div style="display:flex; flex-direction:column; gap:4px;"><h3 style="font-size:18px; font-weight:600; margin:0;">UI Engineer</h3><span style="font-size:13px; color:var(--ink-soft);"><strong class="cv-co">Arnold Clark</strong> · Remote</span><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:560px;">18 months across the Quotations and Employee teams — coding multi-step user journeys, form elements and UI components in an Agile team of designers, developers, PMs and testers.</p></div>
           </div>
 
           <div class="om-entry" style="display:grid; grid-template-columns:120px 1fr; gap:32px; break-inside:avoid;">
-            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Sep 2019 — Feb 2020</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Contract</span></div>
+            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Sep 2019 — Feb 2020</span><span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Contract</span></div>
             <div style="display:flex; flex-direction:column; gap:4px;"><h3 style="font-size:18px; font-weight:600; margin:0;">Front End Developer</h3><span style="font-size:13px; color:var(--ink-soft);"><strong class="cv-co">Royal Bank of Scotland</strong> · Remote | Edinburgh | Glasgow</span><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:560px;">Edinburgh-based work on a large React application serving NatWest, RBS and Ulster Bank, with UX developers, back-end developers and journey planners.</p></div>
           </div>
 
           <div class="om-entry" style="display:grid; grid-template-columns:120px 1fr; gap:32px; break-inside:avoid;">
-            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Apr — Aug 2019</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Contract</span></div>
+            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Apr — Aug 2019</span><span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Contract</span></div>
             <div style="display:flex; flex-direction:column; gap:4px;"><h3 style="font-size:18px; font-weight:600; margin:0;">ReactJS Developer</h3><span style="font-size:13px; color:var(--ink-soft);"><strong class="cv-co">Edrington</strong> · Glasgow</span><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:560px;">Built the Edrington Edge global sales web app for brand ambassadors worldwide using React, Redux and APIs.</p></div>
           </div>
 
           <div class="om-entry" style="display:grid; grid-template-columns:120px 1fr; gap:32px; break-inside:avoid;">
-            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Mar 2018 — Mar 2019</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Permanent</span></div>
+            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Mar 2018 — Mar 2019</span><span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Permanent</span></div>
             <div style="display:flex; flex-direction:column; gap:4px;"><h3 style="font-size:18px; font-weight:600; margin:0;">ReactJS Developer</h3><span style="font-size:13px; color:var(--ink-soft);"><strong class="cv-co">Syntel Europe</strong> · Glasgow</span><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:560px;">Moved to a new banking team to build complex web forms that gather customer data and drive multi-step interactions.</p></div>
           </div>
 
           <div class="om-entry" style="display:grid; grid-template-columns:120px 1fr; gap:32px; break-inside:avoid;">
-            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">May 2017 — Feb 2018</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Permanent</span></div>
-            <div style="display:flex; flex-direction:column; gap:4px;"><h3 style="font-size:18px; font-weight:600; margin:0;">Web UI Developer / Technical Lead</h3><span style="font-size:13px; color:var(--ink-soft);"><strong class="cv-co">Syntel Europe</strong> · Glasgow</span><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:560px;">Designed and built a custom UI pattern library for a large corporate banking site — JavaScript (React + ES6), HTML, SCSS (OOCSS + BEM) — with visual designers, UX and business architects.</p></div>
+            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">May 2017 — Feb 2018</span><span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Permanent</span></div>
+            <div style="display:flex; flex-direction:column; gap:4px;"><h3 style="font-size:18px; font-weight:600; margin:0;">Web UI Developer / Technical Lead</h3><span style="font-size:13px; color:var(--ink-soft);"><strong class="cv-co">Syntel Europe</strong> · Glasgow</span><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:560px;">Designed and built a custom UI pattern library for a large corporate banking site using JavaScript (React + ES6), HTML and SCSS (OOCSS + BEM), with visual designers, UX and business architects.</p></div>
           </div>
 
           <div class="om-entry" style="display:grid; grid-template-columns:120px 1fr; gap:32px; break-inside:avoid;">
-            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Jan 2014 — May 2017</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Permanent</span></div>
+            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Jan 2014 — May 2017</span><span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Permanent</span></div>
             <div style="display:flex; flex-direction:column; gap:4px;"><h3 style="font-size:18px; font-weight:600; margin:0;">Front-end Developer</h3><span style="font-size:13px; color:var(--ink-soft);"><strong class="cv-co">Digirati</strong> · Glasgow | Bristol</span><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:560px;">Consultancy for large corporate and public-sector clients across the UK, working in Agile teams with analysts, UX/UI developers, designers and testers.</p></div>
           </div>
 
           <div class="om-entry" style="display:grid; grid-template-columns:120px 1fr; gap:32px; break-inside:avoid;">
-            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">2012 — 2013</span><span style="font-family:'Space Mono',monospace; font-size:11px; color:var(--faint);">Permanent</span></div>
+            <div style="text-align:right; display:flex; flex-direction:column; gap:3px;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">2012 — 2013</span><span style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Permanent</span></div>
             <div style="display:flex; flex-direction:column; gap:4px;"><h3 style="font-size:18px; font-weight:600; margin:0;">Front-end Developer</h3><span style="font-size:13px; color:var(--ink-soft);"><strong class="cv-co">BiP Solutions</strong> · Glasgow</span><p style="font-size:15px; line-height:1.6; color:var(--muted); margin:6px 0 0; max-width:560px;">Front-end on BiP's flagship public-sector web product within a large Java development team.</p></div>
           </div>
 
@@ -235,9 +252,9 @@
             <div style="display:flex; flex-direction:column; gap:10px;">
               <p style="font-size:13px; color:var(--faint); margin:0; font-family:'Space Mono',monospace; letter-spacing:0.06em; text-transform:uppercase;">Earlier roles</p>
               <div style="display:flex; flex-direction:column; gap:7px;">
-                <div style="font-size:15px; color:var(--muted);"><span style="color:var(--ink-soft); font-weight:600;">Web Designer &amp; Developer</span>, Active8 Promotions — sole developer across the Active Corporate brands, incl. a large Magento store. <span style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint);">2010–2011</span></div>
-                <div style="font-size:15px; color:var(--muted);"><span style="color:var(--ink-soft); font-weight:600;">Front-end Developer</span>, Hilton (Agency) — seasonal, multi-language hotel-promotion pages via a bespoke CMS. <span style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint);">2009–2010</span></div>
-                <div style="font-size:15px; color:var(--muted);"><span style="color:var(--ink-soft); font-weight:600;">Web Designer</span>, EasySpace Design &amp; Colloquium — small-to-mid client sites and intranets. <span style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint);">2007–2009</span></div>
+                <div style="font-size:15px; color:var(--muted);"><span style="color:var(--ink-soft); font-weight:600;">Web Designer &amp; Developer</span>, Active8 Promotions: sole developer across the Active Corporate brands, incl. a large Magento store. <span style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint);">2010–2011</span></div>
+                <div style="font-size:15px; color:var(--muted);"><span style="color:var(--ink-soft); font-weight:600;">Front-end Developer</span>, Hilton (Agency): seasonal, multi-language hotel-promotion pages via a bespoke CMS. <span style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint);">2009–2010</span></div>
+                <div style="font-size:15px; color:var(--muted);"><span style="color:var(--ink-soft); font-weight:600;">Web Designer</span>, EasySpace Design &amp; Colloquium: small-to-mid client sites and intranets. <span style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint);">2007–2009</span></div>
               </div>
             </div>
           </div>
@@ -272,7 +289,7 @@
           <span style="flex:1; height:1px; background:var(--line);"></span>
         </div>
         <div style="display:flex; flex-direction:column; gap:22px;">
-          <div style="display:grid; grid-template-columns:120px 1fr; gap:32px;">
+          <div class="cv-ledger" style="display:grid; grid-template-columns:120px 1fr; gap:32px;">
             <div style="text-align:right;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Core</span></div>
             <div style="display:flex; flex-wrap:wrap; gap:8px;">
               <span style="font-family:'Space Mono',monospace; font-size:13px; color:var(--ink); background:var(--surface); border:1px solid var(--line); padding:6px 12px; border-radius:999px;">HTML</span>
@@ -293,7 +310,7 @@
               <span style="font-family:'Space Mono',monospace; font-size:13px; color:var(--ink); background:var(--surface); border:1px solid var(--line); padding:6px 12px; border-radius:999px;">Photoshop</span>
             </div>
           </div>
-          <div style="display:grid; grid-template-columns:120px 1fr; gap:32px;">
+          <div class="cv-ledger" style="display:grid; grid-template-columns:120px 1fr; gap:32px;">
             <div style="text-align:right;"><span style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--faint);">Familiar</span></div>
             <div style="display:flex; flex-wrap:wrap; gap:8px;">
               <span style="font-family:'Space Mono',monospace; font-size:13px; color:var(--ink-soft); border:1px solid var(--line); padding:6px 12px; border-radius:999px;">WordPress</span>
@@ -310,7 +327,7 @@
 
       <!-- footer -->
       <footer style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; padding-top:24px; border-top:1px solid var(--line);">
-        <span style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint); letter-spacing:0.04em;">References available on request.</span>
+        <span style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint); letter-spacing:0.04em;">Open to new contract engagements · References on request</span>
         <span style="font-family:'Space Mono',monospace; font-size:12px; color:var(--faint);">Scott Gemmell · Front-end UI Developer</span>
       </footer>
 
